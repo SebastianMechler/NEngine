@@ -15,7 +15,8 @@ namespace Nully
 
     NPlayerController();
 
-    float m_speed = 1.0f;
+    float m_speed = 25.0f;
+	float m_rotationSpeed = 2.5f;
     float m_rotationY = 0.0f;
   private:
     IComponentManager* m_componentManager;

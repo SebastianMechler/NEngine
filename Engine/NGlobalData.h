@@ -1,6 +1,7 @@
 #pragma once
 
 #define NPATH_MESH_CUBE "data/primitives/cube.obj"
+
 //#define NPATH_MESH_CUBE "data/dl/hasi.obj"
 //#define NPATH_MESH_CUBE "data/heart.obj"
 
@@ -20,7 +21,14 @@
 #define NPATH_TEXTURE_TERRAIN "data/textures/terrain_grass.tga"
 #define NPATH_TEXTURE_TERRAIN_HEIGHTMAP "data/textures/terrain_heightmap.tga"
 
-#define NPATH_SHADER_DEFAULT "data/default.hlsl"
-#define NPATH_SHADER_TERRAIN "data/terrain.hlsl"
+#define NPATH_TEXTURE_WATER "data/textures/water2.tga"
 
+// Shader
+#define NPATH_SHADER_DEFAULT "data/shader/default.hlsl"
+#define NPATH_SHADER_TERRAIN "data/shader/terrain.hlsl"
+#define NPATH_SHADER_WATER "data/shader/water.hlsl"
+
+
+// Names
 #define NTERRAIN_NAME_DEFAULT "Terrain01"
+#define NWATER_NAME_DEFAULT "Water01"

@@ -91,14 +91,14 @@ namespace Nully
 
     if (NInput::GetInstance().GetKey(NKey::K_LEFT))
     {
-      m_rotationY -= a_deltaTime * 0.1f;
+      m_rotationY -= a_deltaTime * m_rotationSpeed;
       auto transform = m_componentManager->GetComponent<NTransform>();
       transform->SetRotation(0.0f, m_rotationY, 0.0f);
     }
 
     if (NInput::GetInstance().GetKey(NKey::K_RIGHT))
     {
-      m_rotationY += a_deltaTime * 0.1f;
+      m_rotationY += a_deltaTime * m_rotationSpeed;
       auto transform = m_componentManager->GetComponent<NTransform>();
       transform->SetRotation(0.0f, m_rotationY, 0.0f);
     }

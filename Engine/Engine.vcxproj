@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -28,26 +28,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -155,7 +155,9 @@
     <ClCompile Include="NDirectX11.cpp" />
     <ClCompile Include="NDirectXHelper.cpp" />
     <ClCompile Include="NFile.cpp" />
+    <ClCompile Include="NFrameTimer.cpp" />
     <ClCompile Include="NGameObject.cpp" />
+    <ClCompile Include="NGameTimer.cpp" />
     <ClCompile Include="NIkosader.cpp" />
     <ClCompile Include="NImageLoader.cpp" />
     <ClCompile Include="NIndexBuffer.cpp" />
@@ -173,6 +175,7 @@
     <ClCompile Include="NTerrain.cpp" />
     <ClCompile Include="NTextureDirectX11.cpp" />
     <ClCompile Include="NTextureManager.cpp" />
+    <ClCompile Include="NTime.cpp" />
     <ClCompile Include="NTools.cpp" />
     <ClCompile Include="NTorus.cpp" />
     <ClCompile Include="NTransform.cpp" />
@@ -180,6 +183,7 @@
     <ClCompile Include="NVector3.cpp" />
     <ClCompile Include="NVector4.cpp" />
     <ClCompile Include="NVertexBuffer.cpp" />
+    <ClCompile Include="NWater.cpp" />
     <ClCompile Include="NWindow.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
   </ItemGroup>
@@ -209,7 +213,9 @@
     <ClInclude Include="NFileMode.h" />
     <ClInclude Include="NFilePosition.h" />
     <ClInclude Include="NFillMode.h" />
+    <ClInclude Include="NFrameTimer.h" />
     <ClInclude Include="NGameObject.h" />
+    <ClInclude Include="NGameTimer.h" />
     <ClInclude Include="NGlobalData.h" />
     <ClInclude Include="NGraphicsDesc.h" />
     <ClInclude Include="NIkosader.h" />
@@ -247,6 +253,7 @@
     <ClInclude Include="NTerrain.h" />
     <ClInclude Include="NTextureDirectX11.h" />
     <ClInclude Include="NTextureManager.h" />
+    <ClInclude Include="NTime.h" />
     <ClInclude Include="NTools.h" />
     <ClInclude Include="NTorus.h" />
     <ClInclude Include="NTypes.h" />
@@ -257,6 +264,7 @@
     <ClInclude Include="NVector3.h" />
     <ClInclude Include="NVector4.h" />
     <ClInclude Include="NVertexBuffer.h" />
+    <ClInclude Include="NWater.h" />
     <ClInclude Include="NWindow.h" />
     <ClInclude Include="NWindowDesc.h" />
     <ClInclude Include="NShaderManager.h" />

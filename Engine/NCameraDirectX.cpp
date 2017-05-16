@@ -21,20 +21,27 @@ namespace Nully
     XMStoreFloat4x4(&m_view, XMMatrixTranspose(matLookAt));
 
     // init projection matrix
-    auto proj = XMMatrixTranspose
-      (
-        XMMatrixPerspectiveFovLH
-        (
-          a_cameraDesc.fieldOfView,
-          static_cast<float>(a_cameraDesc.screenWidth) / static_cast<float>(a_cameraDesc.screenHeight),
-          a_cameraDesc.nearPlane,
-          a_cameraDesc.farPlane
-          )
-        );
-
-    DirectX::XMStoreFloat4x4(&m_proj, proj);
+	this->OnResize(a_cameraDesc.screenWidth, a_cameraDesc.screenHeight);
 
     return true;
+  }
+  void NCameraDirectX::OnResize(uint32_t a_width, uint32_t a_height)
+  {
+	  m_camerDesc.screenWidth = a_width;
+	  m_camerDesc.screenHeight = a_height;
+
+	  auto proj = XMMatrixTranspose
+	  (
+		  XMMatrixPerspectiveFovLH
+		  (
+			  m_camerDesc.fieldOfView,
+			  static_cast<float>(m_camerDesc.screenWidth) / static_cast<float>(m_camerDesc.screenHeight),
+			  m_camerDesc.nearPlane,
+			  m_camerDesc.farPlane
+		  )
+	  );
+
+	  DirectX::XMStoreFloat4x4(&m_proj, proj);
   }
   DirectX::XMFLOAT4X4& NCameraDirectX::GetView()
   {

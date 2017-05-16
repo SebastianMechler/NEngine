@@ -16,6 +16,7 @@
 #include "NTransform.h"
 #include "NTextureDirectX11.h"
 #include "NTextureManager.h"
+#include "NTime.h"
 
 namespace Nully
 {
@@ -254,7 +255,6 @@ namespace Nully
       return false;
     }
 
-
     NSafeRelease(backBuffer);
 
     // set viewport
@@ -313,6 +313,21 @@ namespace Nully
 
     // set render target
     m_deviceContext->OMSetRenderTargets(1, &m_renderTargetView, m_depthStencilView);
+
+	// inform camera about new resolution
+	auto cameraObject = NObjectManager::GetInstance().GetCamera();
+
+	if (cameraObject)
+	{
+		auto cameraComponent = dynamic_cast<ICamera*>(cameraObject->GetComponent<NCameraDirectX>());
+
+		if (cameraComponent)
+		{
+			cameraComponent->OnResize(a_width, a_height);
+		}
+	}
+	
+
 
     return true;
   }
@@ -510,14 +525,6 @@ namespace Nully
       }
       texIndex++;
     }
-
-    //auto texture = reinterpret_cast<NTextureDirectX11*>(NTextureManager::GetInstance().GetTexture(meshRenderer->GetTexture()));
-    //if (!texture)
-    //{
-    //  return;
-    //}
-    //texture->Bind(m_deviceContext);
-
       
     auto transform = a_gameObject->GetComponent<NTransform>();
     if (!transform)
@@ -529,7 +536,6 @@ namespace Nully
     this->UpdateWVP(world);
       
     // Draw call // TODO: sort by MESH => SHADER, to be able to draw instanced...
-
     if (mesh->m_indexBuffer.GetCount() > 0)
     {
       // draw indexed
@@ -575,10 +581,11 @@ namespace Nully
     constBuffer.world = {};
     constBuffer.view = {};
     constBuffer.projection = {};
+	constBuffer.totalTime = 0.0f;
 
     D3D11_BUFFER_DESC bufferDesc = {};
     bufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-    bufferDesc.ByteWidth = sizeof(NWorldViewProjectionDirectX);
+	bufferDesc.ByteWidth = (sizeof(NWorldViewProjectionDirectX) + 15) / 16 * 16;;
     bufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
     bufferDesc.MiscFlags = 0;
     bufferDesc.StructureByteStride = 0;
@@ -621,6 +628,7 @@ namespace Nully
     bufferPtr->view = componentCamera->GetView();
     bufferPtr->projection = componentCamera->GetProjection();
     bufferPtr->world = a_world;
+	bufferPtr->totalTime = NTime::GetInstance().TotalTime();
 
     // unmap
     m_deviceContext->Unmap(m_constantBuffer, 0);

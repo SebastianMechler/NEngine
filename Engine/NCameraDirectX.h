@@ -14,6 +14,7 @@ namespace Nully
   public:
     // ICamera Interface
     bool Initialize(const NCameraDesc& a_cameraDesc) override;
+	void OnResize(uint32_t a_width, uint32_t a_height) override;
     DirectX::XMFLOAT4X4& GetView() override;
     DirectX::XMFLOAT4X4& GetProjection() override;
 

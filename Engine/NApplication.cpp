@@ -12,6 +12,8 @@
 #include "NTextureManager.h"
 
 #include "NGlobalData.h"
+#include "NFrameTimer.h"
+#include "NTime.h"
 
 namespace Nully
 {
@@ -61,6 +63,7 @@ namespace Nully
     // Load shaders
     NShaderManager::GetInstance().Load(m_renderer, NPATH_SHADER_DEFAULT);
     NShaderManager::GetInstance().Load(m_renderer, NPATH_SHADER_TERRAIN);
+	NShaderManager::GetInstance().Load(m_renderer, NPATH_SHADER_WATER);
 
     // Load Primitives
     NMeshManager& meshManager = NMeshManager::GetInstance();
@@ -72,7 +75,10 @@ namespace Nully
     meshManager.Load(m_renderer, NPATH_MESH_TORUS);
 
     // create terrain
-    meshManager.CreateTerrain(m_renderer, NTERRAIN_NAME_DEFAULT, 80.0f, 80.0f, 500, 500);
+    meshManager.CreateTerrain(m_renderer, NTERRAIN_NAME_DEFAULT, 80.0f, 80.0f, 64, 64);
+
+	// create water plane
+	meshManager.CreateTerrain(m_renderer, NWATER_NAME_DEFAULT, 80.0f, 80.0f, 128, 128);
 
     // load textures
     NTextureManager::GetInstance().Load(m_renderer, NPATH_TEXTURE_DEFAULT);
@@ -80,8 +86,8 @@ namespace Nully
     NTextureManager::GetInstance().Load(m_renderer, NPATH_TEXTURE_DEFAULT2);
     NTextureManager::GetInstance().Load(m_renderer, NPATH_TEXTURE_TERRAIN);
     NTextureManager::GetInstance().Load(m_renderer, NPATH_TEXTURE_TERRAIN_HEIGHTMAP);
+	NTextureManager::GetInstance().Load(m_renderer, NPATH_TEXTURE_WATER);
     
-
     // Set scene
     SetScene(a_scene);
 
@@ -90,6 +96,9 @@ namespace Nully
   void NApplication::Run()
   {
     MSG message = {};
+
+	NFrameTimer frameTimer;
+	frameTimer.Initialize(120); // set frame cap
 
     while (m_quit != true)
     {
@@ -101,7 +110,7 @@ namespace Nully
 
       // Update
       NInput::GetInstance().Update();
-      m_scene->Update(0.02f);
+      m_scene->Update(NTime::GetInstance().DeltaTime());
 
       // Draw
       m_renderer->Begin();
@@ -111,12 +120,13 @@ namespace Nully
 
       m_renderer->End();
 
-      //Sleep(0);
+	  // Frame-Timer which is responsible for deltaTime
+	  frameTimer.Update();
     }
   }
   LRESULT NApplication::MessageHandling(HWND a_hwnd, UINT a_message, WPARAM a_wparam, LPARAM a_lparam)
   {
-    NApplication* application = (NApplication*)GetWindowLongPtr(a_hwnd, 0);
+    NApplication* application = reinterpret_cast<NApplication*>(GetWindowLongPtr(a_hwnd, 0));
 
     switch (a_message)
     {
