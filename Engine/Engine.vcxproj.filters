@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Window">
+      <UniqueIdentifier>{18357faf-a0b9-4102-9fdc-8d8773b4f5f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Application">
+      <UniqueIdentifier>{2520d8dc-5153-4722-b149-01bc4fa2f254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{ceea4df1-6b3c-4317-946b-a2dde7e75d29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Window">
+      <UniqueIdentifier>{5ed2bcee-a2a7-41ab-9596-4c927d6d3e19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics">
+      <UniqueIdentifier>{d798ab88-c642-4e1b-aed4-bae3cf473f2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application">
+      <UniqueIdentifier>{5a1368cd-b498-4c40-ad9e-28c062458c25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{cb601fb3-e62a-4217-8251-e5d6f9b0768b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tools">
+      <UniqueIdentifier>{fd1de5e5-0acf-487b-902f-a47579dda9d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tools">
+      <UniqueIdentifier>{c53616bf-01a4-4952-8930-6ece4e67e4bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\DirectX">
+      <UniqueIdentifier>{e6d806fa-3724-4861-bcea-9974f31f9167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{f3c3c155-c31c-4c4a-8ff7-dde33361a735}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\DirectX">
+      <UniqueIdentifier>{14ec384a-6656-40d2-bc74-8b4510b901a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shader">
+      <UniqueIdentifier>{ac1ab109-506b-438e-96fe-fa66652a7ab8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shader\DirectX">
+      <UniqueIdentifier>{ac6556f7-de99-44a1-8297-b6ab43ef236b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader">
+      <UniqueIdentifier>{9786ffad-8495-4c05-a52b-571bc0f48189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Container">
+      <UniqueIdentifier>{a8254895-c756-488e-9bc5-6afe6cac6894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\File">
+      <UniqueIdentifier>{0244fc0a-9ea0-4913-9e19-c77a81ae2b3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader\DirectX">
+      <UniqueIdentifier>{416cfd38-e400-43fd-9b18-abb1892279b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\File">
+      <UniqueIdentifier>{b720c1df-a6c7-4967-89f0-bea4d501f593}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component">
+      <UniqueIdentifier>{9aca091a-dcb0-4952-8533-f0e06056978e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\Transform">
+      <UniqueIdentifier>{41c4bf50-edee-4f1d-b51b-5900ff38cb3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\Base">
+      <UniqueIdentifier>{d56d14b2-cf42-4eb6-82c8-7767cf3203d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component">
+      <UniqueIdentifier>{26635844-182c-4198-8134-a8ac05f97b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component\Transform">
+      <UniqueIdentifier>{956b582c-d125-4198-833e-0aeb550fa86e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component\Base">
+      <UniqueIdentifier>{eb0ba959-e19e-4997-bfe6-7e7492abaab1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{2c8d0214-9050-4af3-90df-b7cace38a777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{88964653-4a66-4767-8a95-cfcd6f81aec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject">
+      <UniqueIdentifier>{385779e2-3eff-468c-bc77-c93bf56eb9f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject">
+      <UniqueIdentifier>{7d2ff343-7732-437f-b231-f46a8b80e73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component\Camera">
+      <UniqueIdentifier>{d5590249-b14d-41fd-83d5-503deda8616e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\Camera">
+      <UniqueIdentifier>{4052d259-3405-4bc3-b2f5-3fb2c397a48a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model">
+      <UniqueIdentifier>{0af65acc-9b4e-4899-813d-f8fe1a561219}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Model\.Obj">
+      <UniqueIdentifier>{61457e00-5287-4926-b905-f4c66676446d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Memory">
+      <UniqueIdentifier>{6b7d4d02-4b25-4e19-b7d5-eab8f6553a18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{e6589cea-7a73-41ae-b5cc-5a78306341df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model\.Obj">
+      <UniqueIdentifier>{c23ce7b2-5b0f-4585-ab8a-88e93cabe239}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Mesh">
+      <UniqueIdentifier>{8a4b447c-f8b2-4edb-9c40-4654caa3c25c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh">
+      <UniqueIdentifier>{2c534b83-bc57-47f0-802f-72ebdca8b0ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Mesh\DirectX">
+      <UniqueIdentifier>{33599736-4c1b-4bc1-9aa6-8c816db80457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mesh\DirectX">
+      <UniqueIdentifier>{2ff3bc2f-48a9-42ba-bf1d-b225134b140b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\PlayerController">
+      <UniqueIdentifier>{7bcbce4a-252a-4a30-a535-9156e288c7ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component\PlayerController">
+      <UniqueIdentifier>{0048c580-5ef0-462b-bf27-11cc9c580d80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\MeshRenderer">
+      <UniqueIdentifier>{2cb5d87e-ccf4-4e50-bca0-70a7987022f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component\MeshRenderer">
+      <UniqueIdentifier>{8f49347e-591e-4d9c-9f97-11634503aed7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scene">
+      <UniqueIdentifier>{6b3c41f7-3b99-4aac-bd4c-8340efd85a7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene">
+      <UniqueIdentifier>{c681f78f-0eed-4106-801d-f315ae6b1383}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Primitives">
+      <UniqueIdentifier>{e41c1f7e-d060-47be-8604-a8a30439fbd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Primitive">
+      <UniqueIdentifier>{72828a53-be78-4c6e-b610-301044c9bd9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Texture">
+      <UniqueIdentifier>{1daafbe7-fd6d-4283-9377-37bf5a3bc1e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Texture">
+      <UniqueIdentifier>{f168a795-3894-450e-8c18-baf7336c514b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ImageLoader">
+      <UniqueIdentifier>{04d05918-0c95-4d2e-8de2-a5d6464893ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ImageLoader">
+      <UniqueIdentifier>{3179ed4b-1f9b-4f6a-bdf9-eeba61e050a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Texture\DirectX">
+      <UniqueIdentifier>{0d4e8861-4635-4d63-bda6-0ac7bceedd70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Texture\DirectX">
+      <UniqueIdentifier>{ff07b8bf-9f78-46d2-bf30-68441b732476}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NWindow.cpp">
+      <Filter>Source Files\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="NApplication.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="NInput.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="NTools.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="NDirectX11.cpp">
+      <Filter>Source Files\Graphics\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="NDirectXHelper.cpp">
+      <Filter>Source Files\Graphics\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>Source Files\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="NShaderDirectX11.cpp">
+      <Filter>Source Files\Shader\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="NFile.cpp">
+      <Filter>Source Files\File</Filter>
+    </ClCompile>
+    <ClCompile Include="NCameraDirectX.cpp">
+      <Filter>Source Files\Component\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="IComponentManager.cpp">
+      <Filter>Source Files\Component\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="NTransform.cpp">
+      <Filter>Source Files\Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="NVector3.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="NGameObject.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="NVector2.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="NObj.cpp">
+      <Filter>Source Files\Model\.Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="NVector4.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="NIndexBuffer.cpp">
+      <Filter>Source Files\Graphics\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="NVertexBuffer.cpp">
+      <Filter>Source Files\Graphics\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="NMeshManager.cpp">
+      <Filter>Source Files\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="NMeshDirectX11.cpp">
+      <Filter>Source Files\Mesh\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="NObjectManager.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="NPlayerController.cpp">
+      <Filter>Source Files\Component\PlayerController</Filter>
+    </ClCompile>
+    <ClCompile Include="NMeshRenderer.cpp">
+      <Filter>Source Files\Component\MeshRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="NScene.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="NPlane.cpp">
+      <Filter>Source Files\GameObject\Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="NTorus.cpp">
+      <Filter>Source Files\GameObject\Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="NIkosader.cpp">
+      <Filter>Source Files\GameObject\Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="NCone.cpp">
+      <Filter>Source Files\GameObject\Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="NCube.cpp">
+      <Filter>Source Files\GameObject\Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="NSphere.cpp">
+      <Filter>Source Files\GameObject\Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="NImageLoader.cpp">
+      <Filter>Source Files\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="NTextureManager.cpp">
+      <Filter>Source Files\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="NTextureDirectX11.cpp">
+      <Filter>Source Files\Texture\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="NTerrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NWindowDesc.h">
+      <Filter>Header Files\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="NTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NWindow.h">
+      <Filter>Header Files\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="NApplication.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="NApplicationDesc.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="NGraphicsDesc.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="IInput.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="NKey.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="NKeyState.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="NInput.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="NTools.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="IGraphics.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="NFillMode.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="NRenderPass.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="NDirectX11.h">
+      <Filter>Header Files\Graphics\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="NDirectXHelper.h">
+      <Filter>Header Files\Graphics\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="NPrimitiveTopology.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="IShader.h">
+      <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="NString.h">
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="NShaderManager.h">
+      <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="NShaderDirectX11.h">
+      <Filter>Header Files\Shader\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="NFile.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="NFileMode.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="NFilePosition.h">
+      <Filter>Header Files\File</Filter>
+    </ClInclude>
+    <ClInclude Include="NResult.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NSmartPtr.h">
+      <Filter>Header Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="NComPtr.h">
+      <Filter>Header Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="NSmartArrayPtr.h">
+      <Filter>Header Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="NMemory.h">
+      <Filter>Header Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="NRenderer.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="ICamera.h">
+      <Filter>Header Files\Component\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="NCameraDirectX.h">
+      <Filter>Header Files\Component\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="IComponent.h">
+      <Filter>Header Files\Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="IComponentManager.h">
+      <Filter>Header Files\Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="IComponentManager.hpp">
+      <Filter>Header Files\Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="NTransform.h">
+      <Filter>Header Files\Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="NVector3.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="NMath.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameObject.h">
+      <Filter>Header Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="NGameObject.h">
+      <Filter>Header Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="NObjectManager.h">
+      <Filter>Header Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="NCameraDesc.h">
+      <Filter>Header Files\Component\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="NMap.h">
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="NUnorderedMap.h">
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="NMultimap.h">
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="NObj.h">
+      <Filter>Header Files\Model\.Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="NObjDataType.h">
+      <Filter>Header Files\Model\.Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="NObjFace.h">
+      <Filter>Header Files\Model\.Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="NVector.h">
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="NVector2.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="IMesh.h">
+      <Filter>Header Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="NMeshManager.h">
+      <Filter>Header Files\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="NIndexBuffer.h">
+      <Filter>Header Files\Graphics\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="NVertexBuffer.h">
+      <Filter>Header Files\Graphics\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="NVector4.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="NMeshDirectX11.h">
+      <Filter>Header Files\Mesh\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="NPlayerController.h">
+      <Filter>Header Files\Component\PlayerController</Filter>
+    </ClInclude>
+    <ClInclude Include="NWorldViewProjectionDirectX.h">
+      <Filter>Header Files\Graphics\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="NMeshRenderer.h">
+      <Filter>Header Files\Component\MeshRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="NGlobalData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IScene.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="NScene.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="NUnorderedMultimap.h">
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Todo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NCube.h">
+      <Filter>Header Files\GameObject\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="NSphere.h">
+      <Filter>Header Files\GameObject\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="ITexture.h">
+      <Filter>Header Files\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="NCone.h">
+      <Filter>Header Files\GameObject\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="NIkosader.h">
+      <Filter>Header Files\GameObject\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="NPlane.h">
+      <Filter>Header Files\GameObject\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="NTorus.h">
+      <Filter>Header Files\GameObject\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="NPrimitive.h">
+      <Filter>Header Files\GameObject\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="NImageLoader.h">
+      <Filter>Header Files\ImageLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="NImageData.h">
+      <Filter>Header Files\ImageLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="NImageTGAHeader.h">
+      <Filter>Header Files\ImageLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="NCompiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NTextureManager.h">
+      <Filter>Header Files\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="NTextureDirectX11.h">
+      <Filter>Header Files\Texture\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="NTerrain.h">
+      <Filter>Header Files\GameObject</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
