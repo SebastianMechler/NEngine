@@ -16,5 +16,6 @@ namespace Nully
   private:
     IGameObject* m_rotatingObject = nullptr;
     float rotationY = 0.0f;
+	float movementSpeed = 3.0f;
   };
 }

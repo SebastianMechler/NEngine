@@ -39,7 +39,7 @@ PS_INPUT VS_Main(VS_INPUT input)
 	
 	float result = textureHeight.Load(int3(input.uv.x*256, input.uv.y*256, 0)).r;
 
-	input.position.y += sin(totalTime + (input.position.x*0.1)) * 0.25f;
+	input.position.y += sin(totalTime + (input.position.x*0.1));
 	
 	output.position = mul(mul(mul(float4(input.position.xyz, 1), world), view), projection);
 	output.color = input.color;

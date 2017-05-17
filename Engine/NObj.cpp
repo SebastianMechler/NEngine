@@ -156,6 +156,14 @@ namespace Nully
   {
     return m_hasUvs;
   }
+  const NVector3& NObj::GetMin()
+  {
+	  return m_min;
+  }
+  const NVector3& NObj::GetMax()
+  {
+	  return m_max;
+  }
   NObjDataType NObj::GetObjType(char * a_buffer)
   {
     if (a_buffer == nullptr)
@@ -205,6 +213,39 @@ namespace Nully
       // this is a vertex
       // v 0.137950 0.980785 -0.137950
       sscanf_s(a_buffer, "%c %f %f %f", &dirt, 1, &tmp.x, &tmp.y, &tmp.z);
+
+	  // min values for collider
+	  if (tmp.x < m_min.x)
+	  {
+		  m_min.x = tmp.x;
+	  }
+	  
+	  if (tmp.y < m_min.y)
+	  {
+		  m_min.y = tmp.y;
+	  }
+	  
+	  if (tmp.z < m_min.z)
+	  {
+		  m_min.z = tmp.z;
+	  }
+
+	  // max values
+	  if (tmp.x > m_max.x)
+	  {
+		  m_max.x = tmp.x;
+	  }
+
+	  if (tmp.y > m_max.y)
+	  {
+		  m_max.y = tmp.y;
+	  }
+
+	  if (tmp.z > m_max.z)
+	  {
+		  m_max.z = tmp.z;
+	  }
+
       m_vertices.push_back(tmp);
     }
     else if (a_type == NObjDataType::Normal)

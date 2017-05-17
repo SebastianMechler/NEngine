@@ -252,6 +252,19 @@ inline Nully::NVector3 operator/(const Nully::NVector3& a_vector1, const Nully::
   return tmp;
 }
 
+/// @brief Divides a vector by scalar.
+/// @param a_vector1 A vector as reference.
+/// @param a_vector2 A vector as reference.
+/// @return Returns the division of both vectors.
+inline Nully::NVector3 operator/(const Nully::NVector3& a_vector1, float a_scalar)
+{
+	Nully::NVector3 tmp;
+	tmp.x = a_vector1.x / a_scalar;
+	tmp.y = a_vector1.y / a_scalar;
+	tmp.z = a_vector1.z / a_scalar;
+	return tmp;
+}
+
 /// @brief Checks for equalisation of two vectors.
 /// @param a_vector1 A vector as reference.
 /// @param a_vector2 A vector as reference.

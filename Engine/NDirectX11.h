@@ -32,11 +32,15 @@ namespace Nully
     void SetTexture(ITexture* a_texture) override;
     void DrawGameobject(IGameObject* a_gameObject) override;
 
-    // Custom Methods
-    bool CreateShaderBuffer();
-    void UpdateWVP(const DirectX::XMFLOAT4X4& a_world);
+
+	
 
   private:
+	// Custom Methods
+	bool CreateShaderBuffer();
+	void UpdateWVP(const DirectX::XMFLOAT4X4& a_world);
+	void DebugDrawCollider(IGameObject* a_gameObject);
+
     IDXGIAdapter* m_adapter;
     IDXGISwapChain* m_swapchain;
     ID3D11Device* m_device;

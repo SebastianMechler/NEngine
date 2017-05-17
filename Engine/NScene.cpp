@@ -9,6 +9,8 @@
 #include "NGlobalData.h"
 #include "NTerrain.h"
 #include "NWater.h"
+#include "NBoxCollider.h"
+#include "NInput.h"
 
 namespace Nully
 {
@@ -23,6 +25,26 @@ namespace Nully
     gCamera->AddComponent<NPlayerController>();
     t->SetRotation(0.0f, 0.0f, 0.0f);
 
+		{
+			auto g2 = NGameObject::Instantiate<NCube>();
+			//auto t = g2->GetComponent<NTransform>();
+			g2->GetComponent<NTransform>()->SetScale(1.0f, 1.0f, 1.0f);
+			m_rotatingObject = g2;
+			g2->AddComponent<NBoxCollider>();
+		}
+
+		{
+			auto g2 = NGameObject::Instantiate<NCube>();
+			g2->GetComponent<NTransform>()->SetPosition(0.0f, 10.0f, 0.0f);
+			g2->AddComponent<NBoxCollider>();
+		}
+
+
+
+	//t3->SetPosition(-0.5f, -0.5f, 0.0f);
+	//g3->GetComponent<NMeshRenderer>()->SetMesh(NPATH_MESH_TREE);
+	//g3->GetComponent<NMeshRenderer>()->SetTexture(NPATH_TEXTURE_DEFAULT2);
+
     //// create some cubes
     //for (auto i = 1; i < 10; i++)
     //{
@@ -36,25 +58,30 @@ namespace Nully
     //  t->SetPosition(static_cast<float>(-i * 5), 0.0f, 0.0f);
     //}
 
+	//create some cubes
+	for (auto i = 1; i < 10; i++)
+	{
+		auto g2 = NGameObject::Instantiate<NCube>();
+		auto m = g2->GetComponent<NMeshRenderer>();
+		m->SetTexture(NPATH_TEXTURE_DEFAULT1);
+		auto t = g2->GetComponent<NTransform>();
+		//g2->AddComponent<NBoxCollider>();
+
+		t->SetScale(2.0f, 2.0f, 2.0f);
+		t->SetPosition(static_cast<float>(-i * 5), 0.0f, -2.0f);
+	}
+
     // create terrain
     auto terrain = NGameObject::Instantiate<NTerrain>();
     terrain->GetComponent<NTransform>()->SetPosition(-50.0f, -2.0f, -30.0f);
 
-	// create water
-	auto water = NGameObject::Instantiate<NWater>();
-	water->GetComponent<NTransform>()->SetPosition(-50.0f, 3.0f, -30.0f);
 
-    //// create some cubes
-    //for (auto i = 1; i < 10; i++)
-    //{
-    //  auto g2 = NGameObject::Instantiate<NCube>();
-    //  auto m = g2->GetComponent<NMeshRenderer>();
-    //  m->SetTexture(NPATH_TEXTURE_DEFAULT1);
-    //  auto t = g2->GetComponent<NTransform>();
-    //  
-    //  t->SetScale(2.0f, 2.0f, 2.0f);
-    //  t->SetPosition(static_cast<float>(-i * 5), 0.0f, -2.0f);
-    //}
+
+	// create water
+	//auto water = NGameObject::Instantiate<NWater>();
+	//water->GetComponent<NTransform>()->SetPosition(-50.0f, 3.0f, -30.0f);
+
+
 
     //// create some cubes
     //for (auto i = 1; i < 10; i++)
@@ -115,16 +142,28 @@ namespace Nully
   }
   void NScene::Update(float a_deltaTime)
   {
- //   auto t = m_rotatingObject->GetComponent<NTransform>();
- //   rotationY += 0.001f;
- //   //t->SetRotation(0.0f, rotationY, 0.0f);
-	//auto position = t->GetPosition();
-	//position.x += t->GetUp().x * a_deltaTime * 0.1f;
-	//position.y += t->GetUp().y * a_deltaTime * 0.1f;
-	//position.z += t->GetUp().z * a_deltaTime * 0.1f;
-	//t->SetPosition(position.x, position.y, position.z);
+	auto t = m_rotatingObject->GetComponent<NTransform>();
 
-    NObjectManager::GetInstance().Update(a_deltaTime);
+	rotationY += 0.001f;
+	//t->SetRotation(0.0f, rotationY, 0.0f);
+	
+	auto position = t->GetPosition();
+	position.x += t->GetUp().x * a_deltaTime * movementSpeed;
+	position.y += t->GetUp().y * a_deltaTime * movementSpeed;
+	position.z += t->GetUp().z * a_deltaTime * movementSpeed;
+	t->SetPosition(position.x, position.y, position.z);
+
+	if (NInput::GetInstance().GetKey(NKey::K_E))
+	{
+		auto scale = t->GetScale();
+		scale.x += 5.0f * a_deltaTime;
+		scale.y += 5.0f * a_deltaTime;
+		scale.z += 5.0f * a_deltaTime;
+		t->SetScale(scale.x, scale.y, scale.z);
+	}
+	
+
+	NObjectManager::GetInstance().Update(a_deltaTime);
   }
   void NScene::Draw(IGraphics* a_renderer)
   {

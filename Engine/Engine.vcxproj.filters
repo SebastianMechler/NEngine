@@ -181,6 +181,12 @@
     <Filter Include="Source Files\Time">
       <UniqueIdentifier>{8efb5a11-5886-4bea-90c7-77480ee87856}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Component\Collider">
+      <UniqueIdentifier>{f663ddf3-af4e-478e-84c3-62f7743205fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component\Collider">
+      <UniqueIdentifier>{a38acb5a-d703-45bb-b0ad-8f22e0cdd921}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -302,6 +308,12 @@
     </ClCompile>
     <ClCompile Include="NWater.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NBoxCollider.cpp">
+      <Filter>Source Files\Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="NAABB.cpp">
+      <Filter>Source Files\Component\Collider</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -553,6 +565,15 @@
     </ClInclude>
     <ClInclude Include="NWater.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NBoxCollider.h">
+      <Filter>Header Files\Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="NVertexDefault.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="NAABB.h">
+      <Filter>Header Files\Component\Collider</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

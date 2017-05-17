@@ -5,14 +5,13 @@
 
 namespace Nully
 {
-
   class IComponent;
 
-  class IComponentManager
+	class IComponentManager
   {
   public:
     IComponentManager();
-
+		
     template <typename T, typename ...Args>
     T* AddComponent(Args ... args);
 
@@ -29,8 +28,6 @@ namespace Nully
   protected:
     void UpdateComponents(float a_deltaTime);
 
-
-  protected:
     NMap<size_t, IComponent*> m_components; // key = hash, value = ptr
   };
 }

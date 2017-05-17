@@ -64,6 +64,7 @@ namespace Nully
     NShaderManager::GetInstance().Load(m_renderer, NPATH_SHADER_DEFAULT);
     NShaderManager::GetInstance().Load(m_renderer, NPATH_SHADER_TERRAIN);
 	NShaderManager::GetInstance().Load(m_renderer, NPATH_SHADER_WATER);
+	NShaderManager::GetInstance().Load(m_renderer, NPATH_SHADER_COLLIDER);
 
     // Load Primitives
     NMeshManager& meshManager = NMeshManager::GetInstance();

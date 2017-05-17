@@ -20,7 +20,7 @@ namespace Nully
     {
       return false;
     }
-
+	
     m_vertexCount = a_vertexCount;
     m_stride = sizeof(NVertexDefault);
 

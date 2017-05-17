@@ -12,6 +12,22 @@ namespace Nully
   {
     m_primitiveTopology = a_topology;
   }
+  const NVector3& NMeshDirectX11::GetBoundingMin()
+  {
+	  return m_boundingMin;
+  }
+  const NVector3& NMeshDirectX11::GetBoundingMax()
+  {
+	  return m_boundingMax;
+  }
+  void NMeshDirectX11::SetBoundingMin(const NVector3& a_min)
+  {
+	  m_boundingMin = a_min;
+  }
+  void NMeshDirectX11::SetBoundingMax(const NVector3& a_max)
+  {
+	  m_boundingMax = a_max;
+  }
   NMeshDirectX11* NMeshDirectX11::Load(ID3D11Device* a_device, NObj& a_obj)
   {
     NFaces faces = a_obj.GetFaces();
@@ -51,7 +67,82 @@ namespace Nully
       return nullptr;
     }
     
+	mesh->SetBoundingMin(a_obj.GetMin());
+	mesh->SetBoundingMax(a_obj.GetMax());
+
     return mesh;
+  }
+  NMeshDirectX11* NMeshDirectX11::LoadAABB(ID3D11Device* a_device, const NAABB& a_aabb)
+  {
+	  if (!a_device)
+	  {
+		  return nullptr;
+	  }
+
+	  NVector3 a_min = a_aabb.center - a_aabb.size;
+	  NVector3 a_max = a_aabb.center + a_aabb.size;
+
+	  // create geometry
+	  const uint32_t numVerts = 8;
+
+	  NVertexDefault vertices[numVerts];
+	  vertices[0].position = NVector3(a_min.x, a_min.y, a_max.z); // bottmLeft (FRONT)
+	  vertices[1].position = NVector3(a_max.x, a_min.y, a_max.z); // bottomRight (FRONT)
+	  vertices[2].position = NVector3(a_max.x, a_max.y, a_max.z); // topRight (FRONT)
+	  vertices[3].position = NVector3(a_min.x, a_max.y, a_max.z); // topLeft (FRONT)
+
+	  vertices[4].position = NVector3(a_min.x, a_min.y, a_min.z); // bottmLeft (BACK)
+	  vertices[5].position = NVector3(a_max.x, a_min.y, a_min.z); // bottomRight (BACK)
+	  vertices[6].position = NVector3(a_max.x, a_max.y, a_min.z); // topRight (BACK)
+	  vertices[7].position = NVector3(a_min.x, a_max.y, a_min.z); // topLeft (BACK)
+
+	  const uint32_t numIndices = 12 * 2; // 12 lines * 2 (12 lines must be defined by two points to draw a line)
+	  uint32_t indices[numIndices] =
+	  {
+		// FRONT
+		0, 1, // bottomLeft to bottomRight
+		1, 2, // bottomRight to topRight
+		0, 3, // bottomLeft to topLeft
+		3, 2, // topLeft to topRight
+
+		// BACK
+		4, 5, // bottomLeft to bottomRight
+		5, 6, // bottomRight to topRight
+		4, 7, // bottomLeft to topLeft
+		7, 6, // topLeft to topRight
+
+		// LINES BETWEEN FRONT AND BACK
+		3, 7, // topLeft (FRONT) to topLeft (BACK)
+		2, 6, // topRight (FRONT) to topRight (BACK)
+		0, 4, // bottomLeft (FRONT) to bottomLeft (BACK)
+		1, 5, // bottomRight (FRONT) to bottomRight (BACK)
+	  };
+
+
+	  NMeshDirectX11* mesh = new NMeshDirectX11();
+	  if (!mesh)
+	  {
+		  return nullptr;
+	  }
+
+	  // create vertex buffer
+	  if (!mesh->m_vertexBuffer.Load(a_device, vertices, numVerts))
+	  {
+		  NSafeDelete(mesh);
+		  return nullptr;
+	  }
+
+	  // set topology
+	  mesh->SetTopology(NPrimitiveTopology::LineList);
+
+	  // create index buffer
+	  if (!mesh->m_indexBuffer.Create(a_device, indices, numIndices))
+	  {
+		  NSafeDelete(mesh);
+		  return nullptr;
+	  }
+
+	  return mesh;
   }
   NMeshDirectX11* NMeshDirectX11::LoadTerrain(ID3D11Device* a_device, float a_width, float a_depth, uint32_t a_m, uint32_t a_n)
   {

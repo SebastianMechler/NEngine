@@ -20,11 +20,6 @@ namespace Nully
   };
 
 
-
-
-
-
-
   template <typename T>
   IGameObject* NGameObject::Instantiate(bool a_addToObjectManager)
   {

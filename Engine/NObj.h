@@ -31,6 +31,9 @@ namespace Nully
     NUvs& GetUVs();
     bool HasUVs() const;
 
+	const NVector3& GetMin();
+	const NVector3& GetMax();
+
   private:
     NObjDataType GetObjType(char* buffer);
     void ToNVector3(char* a_buffer, NObjDataType a_type, uint32_t a_lineLength);
@@ -47,5 +50,8 @@ namespace Nully
     NUvs m_uvs;
 
     bool m_hasUvs;
+
+	NVector3 m_min;
+	NVector3 m_max;
   };
 }

@@ -4,20 +4,10 @@
 
 #include "NTypes.h"
 #include "NDirectxHelper.h"
-#include "NVector2.h"
-#include "NVector4.h"
-#include "NVector3.h"
+#include "NVertexDefault.h"
 
 namespace Nully
 {
-  struct NVertexDefault
-  {
-    NVector3 position;
-    NVector4 color;
-    NVector3 normal;
-    NVector2 uv;
-  };
-
   class NVertexBuffer
   {
   public:

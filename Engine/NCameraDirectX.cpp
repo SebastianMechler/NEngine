@@ -56,7 +56,7 @@ namespace Nully
     NCameraDesc camDesc{};
     camDesc.screenWidth = NApplication::m_applicationDesc.windowDesc.width;
     camDesc.screenHeight = NApplication::m_applicationDesc.windowDesc.height;
-    camDesc.farPlane = 100.0f;
+    camDesc.farPlane = 1000.0f;
     camDesc.nearPlane = 0.01f;
     camDesc.fieldOfView = 3.1415f * 0.35f;
 

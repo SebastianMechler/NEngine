@@ -17,6 +17,8 @@
 #include "NTextureDirectX11.h"
 #include "NTextureManager.h"
 #include "NTime.h"
+#include "NGlobalData.h"
+#include "NBoxCollider.h"
 
 namespace Nully
 {
@@ -545,7 +547,15 @@ namespace Nully
     {
       // draw normally
       m_deviceContext->Draw(mesh->m_vertexBuffer.GetVertexCount(), 0);
-    }    
+    }
+
+	// DebugDrawCollider
+#ifdef _DEBUG
+	if (a_gameObject->GetComponent<NBoxCollider>())
+	{
+		DebugDrawCollider(a_gameObject);
+	}
+#endif // _DEBUG
   }
 
   ITexture* NDirectX11::LoadTextureTGA(const char* a_file)
@@ -632,5 +642,65 @@ namespace Nully
 
     // unmap
     m_deviceContext->Unmap(m_constantBuffer, 0);
+  }
+  void NDirectX11::DebugDrawCollider(IGameObject* a_gameObject)
+  {
+	  if (!a_gameObject)
+	  {
+		  return;
+	  }
+
+	  auto boxCollider = a_gameObject->GetComponent<NBoxCollider>();
+	  if (!boxCollider)
+	  {
+		  return;
+	  }
+
+	  auto shader = NShaderManager::GetInstance().GetShader(NPATH_SHADER_COLLIDER);
+	  if (!shader)
+	  {
+		  return;
+	  }
+	  shader->Set(m_deviceContext);
+
+	  // if mesh is not loaded yet ==> load
+	  IMesh* boxMesh = boxCollider->GetMesh();
+	  if (!boxMesh)
+	  {
+		  // mesh hasn't been created yet ==> load it
+		  boxMesh = NMeshDirectX11::LoadAABB(m_device, boxCollider->GetAABB());
+		  if (!boxMesh)
+		  {
+			  // ERROR => failed loading box mesh
+			  return;
+		  }
+
+		  boxCollider->SetMesh(boxMesh);
+	  }
+
+	  NMeshDirectX11* dxMesh = reinterpret_cast<NMeshDirectX11*>(boxMesh);
+	  dxMesh->Set(m_deviceContext);
+	  SetPrimitiveTopology(dxMesh->GetTopology());
+
+	  auto transform = a_gameObject->GetComponent<NTransform>();
+	  if (!transform)
+	  {
+		  return;
+	  }
+
+	  auto world = transform->GetWorld();
+	  this->UpdateWVP(world);
+
+	  // Draw call // TODO: sort by MESH => SHADER, to be able to draw instanced...
+	  if (dxMesh->m_indexBuffer.GetCount() > 0)
+	  {
+		  // draw indexed
+		  m_deviceContext->DrawIndexed(dxMesh->m_indexBuffer.GetCount(), 0, 0);
+	  }
+	  else
+	  {
+		  // draw normally
+		  m_deviceContext->Draw(dxMesh->m_vertexBuffer.GetVertexCount(), 0);
+	  }
   }
 }

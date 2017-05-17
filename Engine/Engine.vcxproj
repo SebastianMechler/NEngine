@@ -42,14 +42,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -58,19 +58,19 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="props\Engine.props" />
+    <Import Project="props\Engine_x86.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="props\Engine.props" />
+    <Import Project="props\Engine_x86.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="props\Engine.props" />
+    <Import Project="Engine_x64.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="props\Engine.props" />
+    <Import Project="Engine_x64.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -148,7 +148,9 @@
   <ItemGroup>
     <ClCompile Include="IComponentManager.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="NAABB.cpp" />
     <ClCompile Include="NApplication.cpp" />
+    <ClCompile Include="NBoxCollider.cpp" />
     <ClCompile Include="NCameraDirectX.cpp" />
     <ClCompile Include="NCone.cpp" />
     <ClCompile Include="NCube.cpp" />
@@ -199,8 +201,10 @@
     <ClInclude Include="IScene.h" />
     <ClInclude Include="IShader.h" />
     <ClInclude Include="ITexture.h" />
+    <ClInclude Include="NAABB.h" />
     <ClInclude Include="NApplication.h" />
     <ClInclude Include="NApplicationDesc.h" />
+    <ClInclude Include="NBoxCollider.h" />
     <ClInclude Include="NCameraDesc.h" />
     <ClInclude Include="NCameraDirectX.h" />
     <ClInclude Include="NCompiler.h" />
@@ -264,6 +268,7 @@
     <ClInclude Include="NVector3.h" />
     <ClInclude Include="NVector4.h" />
     <ClInclude Include="NVertexBuffer.h" />
+    <ClInclude Include="NVertexDefault.h" />
     <ClInclude Include="NWater.h" />
     <ClInclude Include="NWindow.h" />
     <ClInclude Include="NWindowDesc.h" />
